@@ -2,11 +2,11 @@
 
 export(add_logo)
 export(light_blue_color)
-export(load_tariff_fonts)
 export(navy_color)
 export(scale_color_tariff)
 export(scale_fill_tariff)
 export(style_tariff_label)
+export(tariff_font_info)
 export(theme_tariff)
 export(yellow_color)
 importFrom(cowplot,draw_grob)

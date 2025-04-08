@@ -21,5 +21,5 @@ library(ggplot2)
 ggplot(head(country_tariffs, 10), aes(x = country, y = reciprocal_tariff_adjusted, fill = country)) +
   geom_bar(stat = "identity") +
   scale_fill_tariff() +
-  theme_tariff(use_custom_font = FALSE)
+  theme_tariff()
 }

@@ -31,13 +31,6 @@ library(data.table)
 library(tariffTheme)
 ```
 
-If you'd like to use the included Merriweather font, you can load it with:
-
-```{r fonts, eval=FALSE}
-# Register the Merriweather font (only needed once per R session)
-load_tariff_fonts()
-```
-
 ## Basic Theme Usage
 
 The package includes a built-in dataset of country tariffs that we can use for our examples:
@@ -170,7 +163,7 @@ sample_plot <- ggplot(tariff_sample, aes(x = country, y = reciprocal_tariff_adju
   theme(axis.text.x = element_text(angle = 90, hjust = 1))
 
 # Add logo and borders
-final_sample_plot <- add_logo(sample_plot, corner_radius = 0.03)
+final_sample_plot <- add_logo(sample_plot)
 
 # Display the final plot
 print(final_sample_plot)

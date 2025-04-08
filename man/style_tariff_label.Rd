@@ -21,6 +21,6 @@ library(ggplot2)
 p <- ggplot(country_tariffs, aes(x = country, y = reciprocal_tariff_adjusted)) +
   geom_bar(stat = "identity", fill = yellow_color) +
   geom_label(aes(label = paste0(reciprocal_tariff_adjusted, "\%"))) +
-  theme_tariff(use_custom_font = FALSE)
+  theme_tariff()
 style_tariff_label(p)
 }

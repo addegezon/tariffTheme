@@ -2,7 +2,7 @@ Package: tariffTheme
 Title: Custom Theme for Tariff Data Visualizations
 Version: 0.1.0
 Authors@R: 
-    person("Andreas", "Mayer", email = "andreas.mayer@example.com", role = c("aut", "cre"),
+    person("Andreas", "Gustafsson", email = "andreas.gustafsson@sofi.su.se", role = c("aut", "cre"),
            comment = c(ORCID = ""))
 Description: Provides a custom ggplot2 theme and utilities for creating 
     consistent visualizations of tariff data. Includes a dark navy theme
@@ -17,7 +17,6 @@ Imports:
     cowplot,
     magick,
     grid,
-    extrafont,
     data.table
 Suggests:
     knitr,

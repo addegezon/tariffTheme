@@ -1,6 +1,6 @@
 # tariffTheme
 
-An R package that provides a custom theme for ggplot2 visualizations of tariff data, with consistent styling, color schemes, and utility functions.
+__THIS PACKAGE WAS MOSTLY BUILT BY GITHUB COPILOT. IF ANYTHING IS NOT WORKING, BLAME OUR AI OVERLORDS.__
 
 ## Installation
 
@@ -8,7 +8,7 @@ You can install the development version of tariffTheme from GitHub with:
 
 ```r
 # install.packages("devtools")
-devtools::install_github("yourusername/tariffTheme")
+devtools::install_github("addegezon/tariffTheme")
 ```
 
 Or install the local package with:
@@ -45,6 +45,8 @@ final_plot <- add_logo(p)
 print(final_plot)
 ```
 
+![Example Plot](man/figures/tariff_example.png)
+
 ## Dependencies
 
 This package depends on:
@@ -52,16 +54,7 @@ This package depends on:
 - cowplot
 - magick
 - grid
-- extrafont
 - data.table
-
-## Font Requirements
-
-This package uses the Merriweather font family. If you don't have this font installed, you can:
-
-1. Use the included fonts from the package
-2. Install the fonts from the Google Fonts website
-3. Set a different font in the theme functions
 
 ## License
 

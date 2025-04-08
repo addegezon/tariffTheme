@@ -29,11 +29,11 @@
 #'     x = "Country",
 #'     y = "U.S.A Discounted Reciprocal Tariffs"
 #'   ) +
-#'   theme_tariff(use_custom_font = FALSE) +  # Use system fonts for examples
+#'   theme_tariff() +
 #'   theme(axis.text.x = element_text(angle = 90, hjust = 1))
 #'
 #' # Add logo and borders to the plot
-#' final_plot <- add_logo(tariff_plot)  # Remove corner_radius parameter for compatibility
+#' final_plot <- add_logo(tariff_plot)
 #'
 #' # Display the final plot
 #' print(final_plot)

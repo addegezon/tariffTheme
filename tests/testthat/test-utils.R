@@ -5,7 +5,7 @@ test_that("add_logo function works correctly", {
   p <- ggplot(data.frame(x = 1:3, y = 1:3), aes(x, y)) +
        geom_point() +
        labs(title = "Test Plot") +
-       theme_tariff(use_custom_font = FALSE)  # Use system fonts to avoid font errors
+       theme_tariff()
   
   # Test that add_logo returns an object of the correct class
   # We don't test the actual output as it depends on the logo file
@@ -21,7 +21,7 @@ test_that("style_tariff_label function works correctly", {
   # Create a test plot
   p <- ggplot(data.frame(x = 1:3, y = 1:3), aes(x, y)) +
        geom_label(aes(label = "test")) +
-       theme_tariff(use_custom_font = FALSE)  # Use system fonts to avoid font errors
+       theme_tariff()
   
   # Test that style_tariff_label returns an object of the correct class
   result <- style_tariff_label(p)

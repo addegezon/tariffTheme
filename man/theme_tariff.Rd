@@ -4,25 +4,23 @@
 \alias{theme_tariff}
 \title{Custom ggplot2 theme for tariff visualizations}
 \usage{
-theme_tariff(base_size = 24, use_custom_font = TRUE)
+theme_tariff(base_size = 24)
 }
 \arguments{
 \item{base_size}{Base font size for the theme (default: 24)}
-
-\item{use_custom_font}{Whether to use Merriweather font (default: TRUE). Set to FALSE if fonts aren't available.}
 }
 \value{
 A ggplot2 theme object
 }
 \description{
 A ggplot2 theme with a dark navy background, light blue and yellow accents,
-and custom typography using the Merriweather font family.
+using system typography for better compatibility.
 }
 \examples{
 library(ggplot2)
 p <- ggplot(country_tariffs, aes(x = country, y = reciprocal_tariff_adjusted)) +
   geom_bar(stat = "identity", fill = yellow_color) +
   labs(title = "Reciprocal Tariffs") +
-  theme_tariff(use_custom_font = FALSE)
+  theme_tariff()
 p
 }

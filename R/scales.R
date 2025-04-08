@@ -12,7 +12,7 @@
 #' ggplot(head(country_tariffs, 10), aes(x = country, y = reciprocal_tariff_adjusted, fill = country)) +
 #'   geom_bar(stat = "identity") +
 #'   scale_fill_tariff() +
-#'   theme_tariff(use_custom_font = FALSE)
+#'   theme_tariff()
 scale_color_tariff <- function(...) {
   # Create a palette with enough colors for any number of values
   # by repeating the base colors as needed
@@ -38,7 +38,7 @@ scale_color_tariff <- function(...) {
 #' ggplot(head(country_tariffs, 10), aes(x = country, y = reciprocal_tariff_adjusted, fill = country)) +
 #'   geom_bar(stat = "identity") +
 #'   scale_fill_tariff() +
-#'   theme_tariff(use_custom_font = FALSE)
+#'   theme_tariff()
 scale_fill_tariff <- function(...) {
   # Create a palette with enough colors for any number of values
   # by repeating the base colors as needed
