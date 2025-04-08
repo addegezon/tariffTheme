@@ -1,0 +1,181 @@
+---
+title: "Introduction to tariffTheme"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Introduction to tariffTheme}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  fig.width = 8, 
+  fig.height = 6,
+  dpi = 300
+)
+```
+
+## Introduction
+
+The `tariffTheme` package provides a consistent visual style for tariff data visualizations. It includes a custom ggplot2 theme, color palettes, and utility functions for adding logos and styling elements.
+
+## Getting Started
+
+First, load the required packages:
+
+```{r setup}
+library(ggplot2)
+library(data.table)
+library(tariffTheme)
+```
+
+If you'd like to use the included Merriweather font, you can load it with:
+
+```{r fonts, eval=FALSE}
+# Register the Merriweather font (only needed once per R session)
+load_tariff_fonts()
+```
+
+## Basic Theme Usage
+
+The package includes a built-in dataset of country tariffs that we can use for our examples:
+
+```{r data_exploration}
+# Take a look at the first few rows of the dataset
+head(country_tariffs)
+```
+
+Let's create a basic visualization with the tariff theme:
+
+```{r basic_plot}
+# Create a simple bar chart with default ggplot2 theming
+basic_plot <- ggplot(country_tariffs[1:10], 
+                    aes(x = country, y = reciprocal_tariff_adjusted)) +
+  geom_bar(stat = "identity") +
+  labs(title = "Reciprocal Tariffs by Country",
+       x = "Country",
+       y = "Tariff Rate (%)") +
+  theme(axis.text.x = element_text(angle = 45, hjust = 1))
+
+# Display the basic plot
+print(basic_plot)
+
+# Now apply the tariff theme
+themed_plot <- basic_plot +
+  theme_tariff() +
+  theme(axis.text.x = element_text(angle = 45, hjust = 1))
+
+# Display the themed plot
+print(themed_plot)
+```
+
+## Using Color Scales
+
+The `tariffTheme` package provides custom color scales that complement the theme:
+
+```{r color_scales}
+# Create a plot with color differentiation
+color_plot <- ggplot(country_tariffs[1:10], 
+                    aes(x = country, y = reciprocal_tariff_adjusted, fill = country)) +
+  geom_bar(stat = "identity") +
+  labs(title = "Tariffs with Custom Color Scale",
+       x = "Country",
+       y = "Tariff Rate (%)") +
+  theme_tariff() +
+  scale_fill_tariff() +
+  theme(axis.text.x = element_text(angle = 45, hjust = 1),
+        legend.position = "none")
+
+# Display the plot with custom colors
+print(color_plot)
+```
+
+## Adding a Logo and Borders
+
+One of the key features of the `tariffTheme` package is the ability to add a logo and styled borders to your plots:
+
+```{r logo_example}
+# Create a basic plot with the tariff theme
+logo_plot <- ggplot(country_tariffs[1:5], 
+                   aes(x = country, y = reciprocal_tariff_adjusted)) +
+  geom_bar(stat = "identity", fill = yellow_color) +
+  geom_text(aes(label = paste0(reciprocal_tariff_adjusted, "%")), 
+            position = position_stack(vjust = 0.5),
+            color = "black") +
+  labs(title = "Tariffs with Logo and Borders",
+       x = "Country",
+       y = "Tariff Rate (%)") +
+  theme_tariff() +
+  theme(axis.text.x = element_text(angle = 45, hjust = 1))
+
+# Add the logo and borders
+final_plot <- add_logo(logo_plot)
+
+# Display the final plot
+print(final_plot)
+```
+
+## Styling Labels
+
+The package also provides helper functions for styling labels and annotations:
+
+```{r label_styling}
+# Create a plot with labels
+label_plot <- ggplot(country_tariffs[1:5], 
+                    aes(x = country, y = reciprocal_tariff_adjusted)) +
+  geom_bar(stat = "identity", fill = light_blue_color) +
+  geom_label(aes(label = paste0(reciprocal_tariff_adjusted, "%")), 
+             position = position_stack(vjust = 0.5)) +
+  labs(title = "Tariffs with Styled Labels",
+       x = "Country",
+       y = "Tariff Rate (%)") +
+  theme_tariff() +
+  theme(axis.text.x = element_text(angle = 45, hjust = 1))
+
+# Apply label styling
+styled_label_plot <- style_tariff_label(label_plot)
+
+# Display the plot with styled labels
+print(styled_label_plot)
+```
+
+## Example: Random Sampling for Better Visualization
+
+Sometimes we might want to work with a subset of the data for better visualization. Here's how we can create a plot with a random sample of countries:
+
+```{r random_sample}
+# Set seed for reproducibility
+set.seed(42)
+
+# Sample 10 random countries
+tariff_sample <- country_tariffs[sample(.N, 10)]
+
+# Make country a factor variable with randomized levels for better display
+tariff_sample[, country := factor(country, levels = sample(country))]
+
+# Create a bar chart with the sample
+sample_plot <- ggplot(tariff_sample, aes(x = country, y = reciprocal_tariff_adjusted)) +
+  geom_bar(stat = "identity", width = 0.7, fill = yellow_color) +
+  geom_text(aes(label = paste0(reciprocal_tariff_adjusted, "%")), 
+            position = position_stack(vjust = 0.5),
+            color = "black") +
+  labs(
+    title = "Reciprocal Tariffs",
+    x = "Country",
+    y = "U.S.A Discounted Reciprocal Tariffs"
+  ) +
+  theme_tariff() +
+  theme(axis.text.x = element_text(angle = 90, hjust = 1))
+
+# Add logo and borders
+final_sample_plot <- add_logo(sample_plot, corner_radius = 0.03)
+
+# Display the final plot
+print(final_sample_plot)
+```
+
+## Conclusion
+
+The `tariffTheme` package provides a consistent and visually appealing way to create tariff data visualizations. By combining the custom theme, color scales, and utility functions, you can quickly create professional-looking plots that maintain a consistent brand identity.

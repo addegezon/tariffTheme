@@ -1,0 +1,47 @@
+# R package specific ignores
+.Rproj.user
+.Rhistory
+.RData
+.Ruserdata
+.Rapp.history
+.DS_Store
+
+# Build artifacts
+*.o
+*.so
+*.dll
+*.tar.gz
+*.tgz
+
+# R check directory
+*.Rcheck/
+
+# vignette build artifacts
+inst/doc
+vignettes/*.html
+vignettes/*.pdf
+
+# Output files from R CMD build and R CMD check
+/*.tar.gz
+/*.Rcheck/
+
+# RStudio files
+.Rproj.user/
+*.Rproj
+
+# OAuth2 token
+.httr-oauth
+
+# knitr and R markdown default cache directories
+*_cache/
+/cache/
+
+# Temporary files created by R markdown
+*.utf8.md
+*.knit.md
+
+# pkgdown site
+docs/
+
+# Translation temp files
+po/*~

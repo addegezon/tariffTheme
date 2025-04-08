@@ -1,0 +1,16 @@
+^.*\.Rproj$
+^\.Rproj\.user$
+^data-raw$
+^\.git$
+^\.github$
+^README\.Rmd$
+^_pkgdown\.yml$
+^docs$
+^pkgdown$
+^\.travis\.yml$
+^\.gitlab-ci\.yml$
+^appveyor\.yml$
+^cran-comments\.md$
+^CRAN-RELEASE$
+^CRAN-SUBMISSION$
+^LICENSE\.md$

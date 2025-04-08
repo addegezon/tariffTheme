@@ -1,0 +1,29 @@
+Package: tariffTheme
+Title: Custom Theme for Tariff Data Visualizations
+Version: 0.1.0
+Authors@R: 
+    person("Andreas", "Mayer", email = "andreas.mayer@example.com", role = c("aut", "cre"),
+           comment = c(ORCID = ""))
+Description: Provides a custom ggplot2 theme and utilities for creating 
+    consistent visualizations of tariff data. Includes a dark navy theme
+    with light blue and yellow accents, functions for adding logos and borders,
+    consistent text styling, and an example dataset of country tariffs.
+License: MIT + file LICENSE
+Encoding: UTF-8
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.3.2
+Imports: 
+    ggplot2,
+    cowplot,
+    magick,
+    grid,
+    extrafont,
+    data.table
+Suggests:
+    knitr,
+    rmarkdown,
+    testthat
+Depends: 
+    R (>= 3.5.0)
+LazyData: true
+VignetteBuilder: knitr
