@@ -28,7 +28,7 @@ reciprocal tariff rates for various countries that can be used for examples.
 }
 
 \author{
-\strong{Maintainer}: Andreas Mayer \email{andreas.mayer@example.com}
+\strong{Maintainer}: Andreas Gustafsson \email{andreas.gustafsson@sofi.su.se}
 
 }
 \keyword{internal}
